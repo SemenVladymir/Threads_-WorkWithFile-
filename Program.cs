@@ -3,15 +3,16 @@
     {
         private static string[]? dataString;
         private static AutoResetEvent waitHandler = new AutoResetEvent(true);
+    private static string Path = "D:\\Timer.txt";
 
 
-        private static void ReadFile()
+    private static void ReadFile()
         {
             waitHandler.WaitOne();
-            if (File.Exists("D:\\Timer.txt"))
+            if (File.Exists(Path))
             {
                 
-                dataString = File.ReadAllLines("D:\\Timer.txt");
+                dataString = File.ReadAllLines(Path);
                 
                 if (dataString.Length > 0)
                 {
